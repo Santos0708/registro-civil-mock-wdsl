@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="BSGSW01_Consultar_Cedula" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WSRegistroCivilConsultaCedulaSoapBinding" type="wsdl" bindingName="{http://www.registrocivil.gob.ec/ConsultaCedula}WSRegistroCivilConsultaCedulaSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/fcastaneda/Projects/TW/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Cedula.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/fcastaneda/Projects/TW/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Cedula.wsdl"><con:part><con:url>file:/Users/fcastaneda/Projects/TW/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Cedula.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WSRegistroCivilConsultaCedula" targetNamespace="http://www.registrocivil.gob.ec/ConsultaCedula" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.registrocivil.gob.ec/ConsultaCedula" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.registrocivil.gob.ec/ConsultaCedula" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="BusquedaPorCedula" type="tns:BusquedaPorCedula"/>
+      <xs:element name="BusquedaPorCedulaResponse" type="tns:BusquedaPorCedulaResponse"/>
+      <xs:element name="WsUp" type="tns:WsUp"/>
+      <xs:element name="WsUpResponse" type="tns:WsUpResponse"/>
+      <xs:complexType name="BusquedaPorCedula">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cedula" type="xs:string"/>
+          <xs:element minOccurs="0" name="Usuario" type="xs:string"/>
+          <xs:element minOccurs="0" name="Contrasenia" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BusquedaPorCedulaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:cedula"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cedula">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalleDomicilio" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cedula" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoError" type="xs:string"/>
+          <xs:element minOccurs="0" name="CondicionCedulado" type="xs:string"/>
+          <xs:element minOccurs="0" name="Conyuge" type="xs:string"/>
+          <xs:element minOccurs="0" name="Domicilio" type="xs:string"/>
+          <xs:element minOccurs="0" name="Error" type="xs:string"/>
+          <xs:element minOccurs="0" name="EstadoCivil" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaCedulacion" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaNacimiento" type="xs:string"/>
+          <xs:element minOccurs="0" name="FirmaElectronica" type="xs:string"/>
+          <xs:element minOccurs="0" name="Genero" type="xs:string"/>
+          <xs:element minOccurs="0" name="IndividualDactilar" type="xs:string"/>
+          <xs:element minOccurs="0" name="Instruccion" type="xs:string"/>
+          <xs:element minOccurs="0" name="LugarNacimiento" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nacionalidad" type="xs:string"/>
+          <xs:element minOccurs="0" name="NombreMadre" type="xs:string"/>
+          <xs:element minOccurs="0" name="NombrePadre" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroDomicilio" type="xs:string"/>
+          <xs:element minOccurs="0" name="Profesion" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WsUp">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="WsUpResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:cedula"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BusquedaPorCedula">
+    <wsdl:part element="tns:BusquedaPorCedula" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WsUpResponse">
+    <wsdl:part element="tns:WsUpResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WsUp">
+    <wsdl:part element="tns:WsUp" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BusquedaPorCedulaResponse">
+    <wsdl:part element="tns:BusquedaPorCedulaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WSRegistroCivilConsultaCedula">
+    <wsdl:operation name="BusquedaPorCedula">
+      <wsdl:input message="tns:BusquedaPorCedula" name="BusquedaPorCedula"></wsdl:input>
+      <wsdl:output message="tns:BusquedaPorCedulaResponse" name="BusquedaPorCedulaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsUp">
+      <wsdl:input message="tns:WsUp" name="WsUp"></wsdl:input>
+      <wsdl:output message="tns:WsUpResponse" name="WsUpResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSRegistroCivilConsultaCedulaSoapBinding" type="tns:WSRegistroCivilConsultaCedula">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="BusquedaPorCedula">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="BusquedaPorCedula">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BusquedaPorCedulaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsUp">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="WsUp">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WsUpResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSRegistroCivilConsultaCedula">
+    <wsdl:port binding="tns:WSRegistroCivilConsultaCedulaSoapBinding" name="WSRegistroCivilConsultaCedulaPort">
+      <soap:address location="https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LAfcastaneda.local:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://registro-civil-mock.herokuapp.com/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="BusquedaPorCedula" bindingOperationName="BusquedaPorCedula" type="Request-Response" outputName="BusquedaPorCedulaResponse" inputName="BusquedaPorCedula" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://LAfcastaneda.local:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:BusquedaPorCedula>
+         <!--Optional:-->
+         <Cedula>1234567890</Cedula>
+         <!--Optional:-->
+         <Usuario>?</Usuario>
+         <!--Optional:-->
+         <Contrasenia>?</Contrasenia>
+      </con:BusquedaPorCedula>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedula"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="WsUp" bindingOperationName="WsUp" type="Request-Response" outputName="WsUpResponse" inputName="WsUp" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:WsUp/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/WsUp"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/sw/RC/BSGSW01_Consultar_Cedula" host="LAfcastaneda.local" name="RegistroCivilMock"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BusquedaPorCedula" interface="WSRegistroCivilConsultaCedulaSoapBinding" operation="BusquedaPorCedula"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
+def cedula = holder.getNodeValue("//Cedula")
+if (cedula.size() == 10)
+	return "RespuestaSinErrores"
+else
+	return "RespuestaConError"</con:dispatchPath><con:response name="RespuestaSinErrores" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:BusquedaPorCedulaResponse>
+         <!--Optional:-->
+         <return>
+            <!--Optional:-->
+            <CalleDomicilio>AV. 6 DICIEMBRE Y ELOY ALFARO</CalleDomicilio>
+            <!--Optional:-->
+            <Cedula>1111111116</Cedula>
+            <!--Optional:-->
+            <CodigoError>000</CodigoError>
+            <!--Optional:-->
+            <CondicionCedulado>NO</CondicionCedulado>
+            <!--Optional:-->
+            <Conyuge>?</Conyuge>
+            <!--Optional:-->
+            <Domicilio>QUITO</Domicilio>
+            <!--Optional:-->
+            <Error>NINGUNO</Error>
+            <!--Optional:-->
+            <EstadoCivil>SOLTERA</EstadoCivil>
+            <!--Optional:-->
+            <FechaCedulacion>?</FechaCedulacion>
+            <!--Optional:-->
+            <FechaNacimiento>?</FechaNacimiento>
+            <!--Optional:-->
+            <FirmaElectronica>?</FirmaElectronica>
+            <!--Optional:-->
+            <Genero>F</Genero>
+            <!--Optional:-->
+            <IndividualDactilar>?</IndividualDactilar>
+            <!--Optional:-->
+            <Instruccion>?</Instruccion>
+            <!--Optional:-->
+            <LugarNacimiento>QUITO</LugarNacimiento>
+            <!--Optional:-->
+            <Nacionalidad>ECUATORIANA</Nacionalidad>
+            <!--Optional:-->
+            <NombreMadre>?</NombreMadre>
+            <!--Optional:-->
+            <NombrePadre>?</NombrePadre>
+            <!--Optional:-->
+            <Nombre>MORTICIA DE LA TORRE</Nombre>
+            <!--Optional:-->
+            <NumeroDomicilio>?</NumeroDomicilio>
+            <!--Optional:-->
+            <Profesion>INGENIERA</Profesion>
+         </return>
+      </con:BusquedaPorCedulaResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:response name="RespuestaConError" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:BusquedaPorCedulaResponse>
+         <!--Optional:-->
+         <return>
+            <!--Optional:-->
+            <CalleDomicilio>?</CalleDomicilio>
+            <!--Optional:-->
+            <Cedula>?</Cedula>
+            <!--Optional:-->
+            <CodigoError>003</CodigoError>
+            <!--Optional:-->
+            <CondicionCedulado>?</CondicionCedulado>
+            <!--Optional:-->
+            <Conyuge>?</Conyuge>
+            <!--Optional:-->
+            <Domicilio>?</Domicilio>
+            <!--Optional:-->
+            <Error>CEDULA NO ENCONTRADA</Error>
+            <!--Optional:-->
+            <EstadoCivil>?</EstadoCivil>
+            <!--Optional:-->
+            <FechaCedulacion>?</FechaCedulacion>
+            <!--Optional:-->
+            <FechaNacimiento>?</FechaNacimiento>
+            <!--Optional:-->
+            <FirmaElectronica>?</FirmaElectronica>
+            <!--Optional:-->
+            <Genero>?</Genero>
+            <!--Optional:-->
+            <IndividualDactilar>?</IndividualDactilar>
+            <!--Optional:-->
+            <Instruccion>?</Instruccion>
+            <!--Optional:-->
+            <LugarNacimiento>?</LugarNacimiento>
+            <!--Optional:-->
+            <Nacionalidad>?</Nacionalidad>
+            <!--Optional:-->
+            <NombreMadre>?</NombreMadre>
+            <!--Optional:-->
+            <NombrePadre>?</NombrePadre>
+            <!--Optional:-->
+            <Nombre>?</Nombre>
+            <!--Optional:-->
+            <NumeroDomicilio>?</NumeroDomicilio>
+            <!--Optional:-->
+            <Profesion>?</Profesion>
+         </return>
+      </con:BusquedaPorCedulaResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
