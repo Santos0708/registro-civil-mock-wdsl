@@ -106,11 +106,11 @@
    <soapenv:Body>
       <con:BusquedaPorCedula>
          <!--Optional:-->
-         <Cedula>1234567890</Cedula>
+         <Cedula>ttt</Cedula>
          <!--Optional:-->
-         <Usuario>?</Usuario>
+         <Usuario>testroot</Usuario>
          <!--Optional:-->
-         <Contrasenia>?</Contrasenia>
+         <Contrasenia>Sti1DigS21</Contrasenia>
       </con:BusquedaPorCedula>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedula"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="WsUp" bindingOperationName="WsUp" type="Request-Response" outputName="WsUpResponse" inputName="WsUp" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
@@ -131,47 +131,47 @@ else
          <!--Optional:-->
          <return>
             <!--Optional:-->
-            <CalleDomicilio>AV. 6 DICIEMBRE Y ELOY ALFARO</CalleDomicilio>
+            <CalleDomicilio>WEQWEQW E</CalleDomicilio>
             <!--Optional:-->
             <Cedula>1111111116</Cedula>
             <!--Optional:-->
             <CodigoError>000</CodigoError>
             <!--Optional:-->
-            <CondicionCedulado>NO</CondicionCedulado>
+            <CondicionCedulado>CEDULA CADUCADA POR ANULACION</CondicionCedulado>
             <!--Optional:-->
-            <Conyuge>?</Conyuge>
+            <Conyuge>ADSF DASF DSA F ASDAF DFAF AF</Conyuge>
             <!--Optional:-->
-            <Domicilio>QUITO</Domicilio>
+            <Domicilio>BOLIVAR/CHILLANES/SAN JOSE DE TAMBO</Domicilio>
             <!--Optional:-->
-            <Error>NINGUNO</Error>
+            <Error>NO ERROR</Error>
             <!--Optional:-->
-            <EstadoCivil>SOLTERA</EstadoCivil>
+            <EstadoCivil>CASADO</EstadoCivil>
             <!--Optional:-->
-            <FechaCedulacion>?</FechaCedulacion>
+            <FechaCedulacion>14/04/2009</FechaCedulacion>
             <!--Optional:-->
-            <FechaNacimiento>?</FechaNacimiento>
+            <FechaNacimiento>25/12/2000</FechaNacimiento>
             <!--Optional:-->
-            <FirmaElectronica>?</FirmaElectronica>
+            <FirmaElectronica>CAMPO POR EL MOMENTO NO DISPONIBLE</FirmaElectronica>
             <!--Optional:-->
-            <Genero>F</Genero>
+            <Genero>MASCULINO</Genero>
             <!--Optional:-->
-            <IndividualDactilar>?</IndividualDactilar>
+            <IndividualDactilar>E3333I3222</IndividualDactilar>
             <!--Optional:-->
-            <Instruccion>?</Instruccion>
+            <Instruccion>INICIAL</Instruccion>
             <!--Optional:-->
-            <LugarNacimiento>QUITO</LugarNacimiento>
+            <LugarNacimiento>EN REVISION</LugarNacimiento>
             <!--Optional:-->
-            <Nacionalidad>ECUATORIANA</Nacionalidad>
+            <Nacionalidad>SUAZI</Nacionalidad>
             <!--Optional:-->
-            <NombreMadre>?</NombreMadre>
+            <NombreMadre>ADFASDF ASDF A ASDADFASDFASD</NombreMadre>
             <!--Optional:-->
-            <NombrePadre>?</NombrePadre>
+            <NombrePadre>ADSFAS A SDF AS ASDFAS ADF ASDF</NombrePadre>
             <!--Optional:-->
-            <Nombre>MORTICIA DE LA TORRE</Nombre>
+            <Nombre>ASDFASDFS ASDASDF</Nombre>
             <!--Optional:-->
-            <NumeroDomicilio>?</NumeroDomicilio>
+            <NumeroDomicilio></NumeroDomicilio>
             <!--Optional:-->
-            <Profesion>INGENIERA</Profesion>
+            <Profesion>DEALER DE CASINO</Profesion>
          </return>
       </con:BusquedaPorCedulaResponse>
    </soapenv:Body>
@@ -226,4 +226,4 @@ else
          </return>
       </con:BusquedaPorCedulaResponse>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

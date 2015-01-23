@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="BSGSW08_Acceder_BSG" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AccesoBSGServiceSoapBinding" type="wsdl" bindingName="{http://bsg.gob.ec/AccesoBSGService}AccesoBSGServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/fcastaneda/Projects/TW/servicio-usuario/src/main/resources/wsdl/BSGSW08_Acceder_BSG.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/fcastaneda/Projects/TW/servicio-usuario/src/main/resources/wsdl/BSGSW08_Acceder_BSG.wsdl"><con:part><con:url>file:/Users/fcastaneda/Projects/TW/servicio-usuario/src/main/resources/wsdl/BSGSW08_Acceder_BSG.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AccesoBSGService" targetNamespace="http://bsg.gob.ec/AccesoBSGService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://bsg.gob.ec/AccesoBSGService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://bsg.gob.ec/AccesoBSGService" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ValidarPermiso" type="tns:ValidarPermiso"/>
+      <xs:element name="ValidarPermisoResponse" type="tns:ValidarPermisoResponse"/>
+      <xs:complexType name="ValidarPermiso">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValidarPermisoPeticion" type="tns:validarPermisoPeticion"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validarPermisoPeticion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cedula" type="xs:string"/>
+          <xs:element minOccurs="0" name="Urlsw" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidarPermisoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:validarPermisoRespuesta"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validarPermisoRespuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Digest" type="xs:string"/>
+          <xs:element minOccurs="0" name="Fecha" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaF" type="xs:string"/>
+          <xs:element minOccurs="0" name="Mensaje" type="tns:mensajeError"/>
+          <xs:element minOccurs="0" name="Nonce" type="xs:string"/>
+          <xs:element minOccurs="0" name="TienePermiso" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mensajeError">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodError" type="xs:string"/>
+          <xs:element minOccurs="0" name="DesError" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidarPermisoResponse">
+    <wsdl:part element="tns:ValidarPermisoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ValidarPermiso">
+    <wsdl:part element="tns:ValidarPermiso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BSG04_Acceder_BSG">
+    <wsdl:operation name="ValidarPermiso">
+      <wsdl:input message="tns:ValidarPermiso" name="ValidarPermiso"></wsdl:input>
+      <wsdl:output message="tns:ValidarPermisoResponse" name="ValidarPermisoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccesoBSGServiceSoapBinding" type="tns:BSG04_Acceder_BSG">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidarPermiso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ValidarPermiso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidarPermisoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccesoBSGService">
+    <wsdl:port binding="tns:AccesoBSGServiceSoapBinding" name="BSG04_Acceder_BSGPort">
+      <soap:address location="https://www.bsg.gob.ec/sw/STI/BSGSW08_Acceder_BSG"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LAfcastaneda.local:8088/sw/STI/BSGSW08_Acceder_BSG</con:endpoint><con:endpoint>https://www.bsg.gob.ec/sw/STI/BSGSW08_Acceder_BSG</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="ValidarPermiso" bindingOperationName="ValidarPermiso" type="Request-Response" outputName="ValidarPermisoResponse" inputName="ValidarPermiso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://LAfcastaneda.local:8088/sw/STI/BSGSW08_Acceder_BSG</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://bsg.gob.ec/AccesoBSGService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acc:ValidarPermiso>
+         <!--Optional:-->
+         <ValidarPermisoPeticion>
+            <!--Optional:-->
+            <Cedula>dsd</Cedula>
+            <!--Optional:-->
+            <Urlsw>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula?wsdl</Urlsw>
+         </ValidarPermisoPeticion>
+      </acc:ValidarPermiso>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bsg.gob.ec/AccesoBSGService/BSG04_Acceder_BSG/ValidarPermiso"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/sw/STI/BSGSW08_Acceder_BSG" host="LAfcastaneda.local" name="RegistroCivilMock"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ValidarPermiso" interface="AccesoBSGServiceSoapBinding" operation="ValidarPermiso"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:ValidarPermisoResponse xmlns:ns2="http://bsg.gob.ec/AccesoBSGService">
+         <return>
+            <Digest>WYwLC9wbOthFwe89v2+6h0vKuH0=</Digest>
+            <Fecha>2015-01-22T20:34:12Z</Fecha>
+            <FechaF>2015-01-22T20:38:12Z</FechaF>
+            <Mensaje>
+               <CodError>000</CodError>
+               <DesError>Ok</DesError>
+            </Mensaje>
+            <Nonce>dgekSy8DzjXzDLkH6u0SPg==</Nonce>
+            <TienePermiso>S</TienePermiso>
+         </return>
+      </ns2:ValidarPermisoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bsg.gob.ec/AccesoBSGService/BSG04_Acceder_BSG/ValidarPermisoResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
