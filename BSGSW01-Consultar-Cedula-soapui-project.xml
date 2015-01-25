@@ -101,12 +101,12 @@
       <soap:address location="https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LAfcastaneda.local:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://registro-civil-mock.herokuapp.com/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="BusquedaPorCedula" bindingOperationName="BusquedaPorCedula" type="Request-Response" outputName="BusquedaPorCedulaResponse" inputName="BusquedaPorCedula" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://LAfcastaneda.local:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://LAfcastaneda.local:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://registro-civil-mock.herokuapp.com/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:endpoint>https://www.bsg.gob.ec/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="BusquedaPorCedula" bindingOperationName="BusquedaPorCedula" type="Request-Response" outputName="BusquedaPorCedulaResponse" inputName="BusquedaPorCedula" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/sw/RC/BSGSW01_Consultar_Cedula</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
    <soapenv:Header/>
    <soapenv:Body>
       <con:BusquedaPorCedula>
          <!--Optional:-->
-         <Cedula>ttt</Cedula>
+         <Cedula>1111111116</Cedula>
          <!--Optional:-->
          <Usuario>testroot</Usuario>
          <!--Optional:-->
@@ -121,10 +121,12 @@
 </soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/WsUp"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/sw/RC/BSGSW01_Consultar_Cedula" host="LAfcastaneda.local" name="RegistroCivilMock"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BusquedaPorCedula" interface="WSRegistroCivilConsultaCedulaSoapBinding" operation="BusquedaPorCedula"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
 def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
 def cedula = holder.getNodeValue("//Cedula")
-if (cedula.size() == 10)
-	return "RespuestaSinErrores"
+if(cedula == '1234567890')
+	return "CedulaNoEncontrada"
+else if (cedula.size() == 10)
+	return "CedulaSinErrores"
 else
-	return "RespuestaConError"</con:dispatchPath><con:response name="RespuestaSinErrores" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+	return "CedulaInvalida"</con:dispatchPath><con:response name="CedulaSinErrores" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
    <soapenv:Header/>
    <soapenv:Body>
       <con:BusquedaPorCedulaResponse>
@@ -175,7 +177,7 @@ else
          </return>
       </con:BusquedaPorCedulaResponse>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:response name="RespuestaConError" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:response name="CedulaNoEncontrada" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
    <soapenv:Header/>
    <soapenv:Body>
       <con:BusquedaPorCedulaResponse>
@@ -195,6 +197,57 @@ else
             <Domicilio>?</Domicilio>
             <!--Optional:-->
             <Error>CEDULA NO ENCONTRADA</Error>
+            <!--Optional:-->
+            <EstadoCivil>?</EstadoCivil>
+            <!--Optional:-->
+            <FechaCedulacion>?</FechaCedulacion>
+            <!--Optional:-->
+            <FechaNacimiento>?</FechaNacimiento>
+            <!--Optional:-->
+            <FirmaElectronica>?</FirmaElectronica>
+            <!--Optional:-->
+            <Genero>?</Genero>
+            <!--Optional:-->
+            <IndividualDactilar>?</IndividualDactilar>
+            <!--Optional:-->
+            <Instruccion>?</Instruccion>
+            <!--Optional:-->
+            <LugarNacimiento>?</LugarNacimiento>
+            <!--Optional:-->
+            <Nacionalidad>?</Nacionalidad>
+            <!--Optional:-->
+            <NombreMadre>?</NombreMadre>
+            <!--Optional:-->
+            <NombrePadre>?</NombrePadre>
+            <!--Optional:-->
+            <Nombre>?</Nombre>
+            <!--Optional:-->
+            <NumeroDomicilio>?</NumeroDomicilio>
+            <!--Optional:-->
+            <Profesion>?</Profesion>
+         </return>
+      </con:BusquedaPorCedulaResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/BusquedaPorCedulaResponse"/></con:response><con:response name="CedulaInvalida" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://www.registrocivil.gob.ec/ConsultaCedula">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <con:BusquedaPorCedulaResponse>
+         <!--Optional:-->
+         <return>
+            <!--Optional:-->
+            <CalleDomicilio>?</CalleDomicilio>
+            <!--Optional:-->
+            <Cedula>?</Cedula>
+            <!--Optional:-->
+            <CodigoError>003</CodigoError>
+            <!--Optional:-->
+            <CondicionCedulado>?</CondicionCedulado>
+            <!--Optional:-->
+            <Conyuge>?</Conyuge>
+            <!--Optional:-->
+            <Domicilio>?</Domicilio>
+            <!--Optional:-->
+            <Error>CÉDULA DEBE TENER 10 DIGITOS</Error>
             <!--Optional:-->
             <EstadoCivil>?</EstadoCivil>
             <!--Optional:-->
