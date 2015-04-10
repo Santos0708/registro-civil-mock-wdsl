@@ -121,7 +121,7 @@
 </soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.registrocivil.gob.ec/ConsultaCedula/WSRegistroCivilConsultaCedula/WsUp"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/sw/RC/BSGSW01_Consultar_Cedula" host="LAfcastaneda.local" name="RegistroCivilMock"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BusquedaPorCedula" interface="WSRegistroCivilConsultaCedulaSoapBinding" operation="BusquedaPorCedula"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
 def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
 def cedula = holder.getNodeValue("//Cedula")
-if(cedula == '1234567890')
+if(cedula == '1234567890' || cedula == '2222222222')
 	return "CedulaNoEncontrada"
 else if (cedula.size() == 10)
 	return "CedulaSinErrores"
