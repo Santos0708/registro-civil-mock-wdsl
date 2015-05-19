@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1784db9a-bd12-4e08-a7a8-212ab3dc59a9" activeEnvironment="Default" name="BSGSW01_Consultar_Discapacidad" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="452aac9f-bd72-47f7-be5b-d8e85de67bdf" wsaVersion="NONE" name="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" type="wsdl" bindingName="{http://www.salud.gob.ec/WebServiceSnapDiscapacidades}WebServiceSnapDiscapacidadesDefinitionsSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/thethin/Documents/senescyt-workflow/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Discapacidad.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/thethin/Documents/senescyt-workflow/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Discapacidad.wsdl"><con:part><con:url>file:/home/thethin/Documents/senescyt-workflow/registro-civil-mock-wdsl/wsdl/BSGSW01_Consultar_Discapacidad.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WebServiceSnapDiscapacidadesDefinitions" targetNamespace="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="BuscarPersonaConDiscapacidadError" type="tns:WebServiceSnapDiscapacidadesFault"/>
+      <xs:element name="BuscarPersonaConDiscapacidadResponse" type="tns:ResultadoDiscapacitado"/>
+      <xs:element name="Credenciales" type="tns:Credenciales"/>
+      <xs:element name="DatosAcceso" type="tns:ParametrosAcceso"/>
+      <xs:element name="ProbarConexionError" type="tns:WebServiceSnapDiscapacidadesFault"/>
+      <xs:element name="ProbarConexionResponse" type="tns:ResultadoProbarConexion"/>
+      <xs:complexType name="Credenciales">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Usuario" type="xs:string"/>
+          <xs:element minOccurs="0" name="Clave" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResultadoProbarConexion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WebServiceSnapDiscapacidadesFault">
+        <xs:all>
+          <xs:element minOccurs="0" name="CodigoError" type="xs:string"/>
+          <xs:element minOccurs="0" name="DescripcionError" type="xs:string"/>
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ParametrosAcceso">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Identificacion" type="xs:string"/>
+          <xs:element minOccurs="0" name="Usuario" type="xs:string"/>
+          <xs:element minOccurs="0" name="Clave" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResultadoDiscapacitado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResultadoConexion" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoConadis" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nombres" type="xs:string"/>
+          <xs:element minOccurs="0" name="Apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="Genero" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaNacimiento" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeficienciaPredomina" type="xs:string"/>
+          <xs:element minOccurs="0" name="GradoDiscapacidad" type="xs:string"/>
+          <xs:element minOccurs="0" name="PorcentajeDiscapacidad" type="xs:string"/>
+          <xs:element minOccurs="0" name="NivelInstruccion" type="xs:string"/>
+          <xs:element minOccurs="0" name="Provincia" type="xs:string"/>
+          <xs:element minOccurs="0" name="Canton" type="xs:string"/>
+          <xs:element minOccurs="0" name="Parroquia" type="xs:string"/>
+          <xs:element minOccurs="0" name="Direccion" type="xs:string"/>
+          <xs:element minOccurs="0" name="DireccionReferencia" type="xs:string"/>
+          <xs:element minOccurs="0" name="TlfCelular" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaConadis" type="xs:string"/>
+          <xs:element minOccurs="0" name="Mensaje" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BuscarPersonaConDiscapacidadError">
+    <wsdl:part element="tns:BuscarPersonaConDiscapacidadError" name="BuscarPersonaConDiscapacidadError"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BuscarPersonaConDiscapacidadResponse">
+    <wsdl:part element="tns:BuscarPersonaConDiscapacidadResponse" name="Return"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProbarConexionError">
+    <wsdl:part element="tns:ProbarConexionError" name="ProbarConexionError"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProbarConexion">
+    <wsdl:part element="tns:Credenciales" name="Credenciales"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BuscarPersonaConDiscapacidad">
+    <wsdl:part element="tns:DatosAcceso" name="DatosAcceso"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProbarConexionResponse">
+    <wsdl:part element="tns:ProbarConexionResponse" name="Return"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSnapDiscapacidades">
+    <wsdl:operation name="ProbarConexion">
+      <wsdl:input message="tns:ProbarConexion" name="ProbarConexion"></wsdl:input>
+      <wsdl:output message="tns:ProbarConexionResponse" name="ProbarConexionResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProbarConexionError" name="ProbarConexionError"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaConDiscapacidad">
+      <wsdl:input message="tns:BuscarPersonaConDiscapacidad" name="BuscarPersonaConDiscapacidad"></wsdl:input>
+      <wsdl:output message="tns:BuscarPersonaConDiscapacidadResponse" name="BuscarPersonaConDiscapacidadResponse"></wsdl:output>
+      <wsdl:fault message="tns:BuscarPersonaConDiscapacidadError" name="BuscarPersonaConDiscapacidadError"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" type="tns:WebServiceSnapDiscapacidades">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ProbarConexion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ProbarConexion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ProbarConexionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProbarConexionError">
+        <soap:fault name="ProbarConexionError" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaConDiscapacidad">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="BuscarPersonaConDiscapacidad">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BuscarPersonaConDiscapacidadResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BuscarPersonaConDiscapacidadError">
+        <soap:fault name="BuscarPersonaConDiscapacidadError" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceSnapDiscapacidadesDefinitions">
+    <wsdl:port binding="tns:WebServiceSnapDiscapacidadesDefinitionsSoapBinding" name="WebServiceSnapDiscapacidadesPort">
+      <soap:address location="https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1 localhost:8088/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint></con:endpoints><con:operation id="a22be9f7-ef83-4c9b-8c17-a7be72981793" isOneWay="false" action="" name="BuscarPersonaConDiscapacidad" bindingOperationName="BuscarPersonaConDiscapacidad" type="Request-Response" outputName="BuscarPersonaConDiscapacidadResponse" inputName="BuscarPersonaConDiscapacidad" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f9b5424a-a322-4682-8782-7a7c4b249f7c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DatosAcceso>
+         <!--Optional:-->
+         <Identificacion>1111111116</Identificacion>
+         <!--Optional:-->
+         <Usuario>?</Usuario>
+         <!--Optional:-->
+         <Clave>?</Clave>
+      </web:DatosAcceso>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidad"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="46895eb5-fce2-4206-aa75-1eca9d51e049" isOneWay="false" action="" name="ProbarConexion" bindingOperationName="ProbarConexion" type="Request-Response" outputName="ProbarConexionResponse" inputName="ProbarConexion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7f1dad5f-03f9-4a3b-8602-c0d611900456" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Credenciales>
+         <!--Optional:-->
+         <Usuario>?</Usuario>
+         <!--Optional:-->
+         <Clave>?</Clave>
+      </web:Credenciales>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/></con:call></con:operation></con:interface><con:mockService id="abcc37ae-05ef-439b-bd7d-ce4df5bd4857" port="8088" path="/sw/MSP/BSGSW01_Consultar_Discapacidad" host="localhost" name="WebServiceSnapDiscapacidadesDefinitionsSoapBinding MockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BuscarPersonaConDiscapacidad" id="0b099eb8-3c80-4831-ac51-6324450fd7ba" interface="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" operation="BuscarPersonaConDiscapacidad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="671f9407-dc87-4d86-902e-a7f2e6a1c3b3" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:BuscarPersonaConDiscapacidadResponse>
+         <!--Optional:-->
+         <ResultadoConexion>?</ResultadoConexion>
+         <!--Optional:-->
+         <CodigoConadis>?</CodigoConadis>
+         <!--Optional:-->
+         <Nombres>JULIO CESAR</Nombres>
+         <!--Optional:-->
+         <Apellidos>GARCIA CASTRO</Apellidos>
+         <!--Optional:-->
+         <Genero>M</Genero>
+         <!--Optional:-->
+         <FechaNacimiento>?</FechaNacimiento>
+         <!--Optional:-->
+         <DeficienciaPredomina>DEBIL VISUAL</DeficienciaPredomina>
+         <!--Optional:-->
+         <GradoDiscapacidad>?</GradoDiscapacidad>
+         <!--Optional:-->
+         <PorcentajeDiscapacidad>?</PorcentajeDiscapacidad>
+         <!--Optional:-->
+         <NivelInstruccion>?</NivelInstruccion>
+         <!--Optional:-->
+         <Provincia>PICHINCHA</Provincia>
+         <!--Optional:-->
+         <Canton>?</Canton>
+         <!--Optional:-->
+         <Parroquia>?</Parroquia>
+         <!--Optional:-->
+         <Direccion>?</Direccion>
+         <!--Optional:-->
+         <DireccionReferencia>?</DireccionReferencia>
+         <!--Optional:-->
+         <TlfCelular>?</TlfCelular>
+         <!--Optional:-->
+         <FechaConadis>?</FechaConadis>
+         <!--Optional:-->
+         <Mensaje>?</Mensaje>
+      </web:BuscarPersonaConDiscapacidadResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
