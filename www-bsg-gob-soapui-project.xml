@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="a75a8248-d303-48bf-ad35-ff79aafda163" activeEnvironment="Default" name="https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad?wsdl" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b839bcb1-66f4-4cda-9044-0520830417db" wsaVersion="NONE" name="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" type="wsdl" bindingName="{http://www.salud.gob.ec/WebServiceSnapDiscapacidades}WebServiceSnapDiscapacidadesDefinitionsSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/thethin/Documents/senescyt-workflow/servicio-bsg/src/main/resources/wsdl/BSGSW01_Consultar_Discapacidad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/thethin/Documents/senescyt-workflow/servicio-bsg/src/main/resources/wsdl/BSGSW01_Consultar_Discapacidad"><con:part><con:url>file:/home/thethin/Documents/senescyt-workflow/servicio-bsg/src/main/resources/wsdl/BSGSW01_Consultar_Discapacidad</con:url><con:content><![CDATA[<wsdl:definitions name="WebServiceSnapDiscapacidadesDefinitions" targetNamespace="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+<con:soapui-project id="f3bb6acd-d849-4df8-84b0-09ea194178de" activeEnvironment="Default" name="www.bsg.gob" resourceRoot="" soapui-version="5.1.3" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="10be9695-119b-4af6-ba0b-16256da24f92" wsaVersion="NONE" name="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" type="wsdl" bindingName="{http://www.salud.gob.ec/WebServiceSnapDiscapacidades}WebServiceSnapDiscapacidadesDefinitionsSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad?wsdl"><con:part><con:url>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WebServiceSnapDiscapacidadesDefinitions" targetNamespace="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
   <wsdl:types>
     <xs:schema targetNamespace="http://www.salud.gob.ec/WebServiceSnapDiscapacidades" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="BuscarPersonaConDiscapacidadError" type="tns:WebServiceSnapDiscapacidadesFault"/>
@@ -119,37 +119,26 @@
       <soap:address location="https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint></con:endpoints><con:operation id="d83d0c1f-7fd7-4bb3-b1f8-e7efa0523bf3" isOneWay="false" action="" name="BuscarPersonaConDiscapacidad" bindingOperationName="BuscarPersonaConDiscapacidad" type="Request-Response" outputName="BuscarPersonaConDiscapacidadResponse" inputName="BuscarPersonaConDiscapacidad" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="851886ea-f914-412e-b729-82978c7bd148" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<?xml version="1.0"?>
-<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
-  <S:Header>
-    <wss:Security xmlns:wss="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
-      <wss:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-        <wss:Username>1001633807</wss:Username>
-        <wss:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">ieVmsoPgdlW2mUXOvH4P+H8x9n4=</wss:Password>
-        <wss:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">S5bow2/x7apYWLrmuOZc2A==</wss:Nonce>
-        <wsu:Created>2015-05-26T17:08:05Z</wsu:Created>
-      </wss:UsernameToken>
-      <wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-        <wsu:Created>2015-05-26T17:08:05Z</wsu:Created>
-        <wsu:Expires>2015-05-26T17:12:05Z</wsu:Expires>
-      </wsu:Timestamp>
-    </wss:Security>
-  </S:Header>
-  <S:Body>
-    <ns2:DatosAcceso xmlns:ns2="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
-      <Identificacion>1715789226</Identificacion>
-      <Usuario>WS-SNAP</Usuario>
-      <Clave>StiDig02</Clave>
-    </ns2:DatosAcceso>
-  </S:Body>
-</S:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidad"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="03168ed0-e4dc-4c85-b242-9c9d0c7003f4" isOneWay="false" action="" name="ProbarConexion" bindingOperationName="ProbarConexion" type="Request-Response" outputName="ProbarConexionResponse" inputName="ProbarConexion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5147362-8587-4c92-9084-40c3c331e74c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint></con:endpoints><con:operation id="0cb18629-05df-4495-bea2-ac2c1e886c23" isOneWay="false" action="" name="BuscarPersonaConDiscapacidad" bindingOperationName="BuscarPersonaConDiscapacidad" type="Request-Response" outputName="BuscarPersonaConDiscapacidadResponse" inputName="BuscarPersonaConDiscapacidad" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="71085fce-da35-431b-b53b-c96b7685fcd7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DatosAcceso>
+         <!--Optional:-->
+         <Identificacion>?</Identificacion>
+         <!--Optional:-->
+         <Usuario>?</Usuario>
+         <!--Optional:-->
+         <Clave>?</Clave>
+      </web:DatosAcceso>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidad"/></con:call></con:operation><con:operation id="f7dade0f-6c38-45d3-86b8-938025e37601" isOneWay="false" action="" name="ProbarConexion" bindingOperationName="ProbarConexion" type="Request-Response" outputName="ProbarConexionResponse" inputName="ProbarConexion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3fcd168f-6bc0-40ed-a2dd-cac3cb0e7590" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
    <soapenv:Header/>
    <soapenv:Body>
       <web:Credenciales>
          <!--Optional:-->
-         <Usuario>WS-SNAP</Usuario>
+         <Usuario>?</Usuario>
          <!--Optional:-->
-         <Clave>a</Clave>
+         <Clave>?</Clave>
       </web:Credenciales>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
