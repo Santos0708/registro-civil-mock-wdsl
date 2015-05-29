@@ -125,13 +125,13 @@
     <wss:Security xmlns:wss="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <wss:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <wss:Username>1001633807</wss:Username>
-        <wss:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">JHpZ3C7juknb2rtjZrCWJe1tF2o=</wss:Password>
-        <wss:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">Wm5q00h/zdTZp5KWRjA9wg==</wss:Nonce>
-        <wsu:Created>2015-05-28T19:15:43Z</wsu:Created>
+        <wss:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">EC2is3byp1V3ySoNXPkFl1ksMrk=</wss:Password>
+        <wss:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">gYjFsdEoOk+AsB8xdZoEQw==</wss:Nonce>
+        <wsu:Created>2015-05-29T19:06:28Z</wsu:Created>
       </wss:UsernameToken>
       <wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-        <wsu:Created>2015-05-28T19:15:43Z</wsu:Created>
-        <wsu:Expires>2015-05-28T19:19:43Z</wsu:Expires>
+        <wsu:Created>2015-05-29T19:06:28Z</wsu:Created>
+        <wsu:Expires>2015-05-29T19:10:28Z</wsu:Expires>
       </wsu:Timestamp>
     </wss:Security>
   </S:Header>
@@ -152,10 +152,10 @@
          <Clave>?</Clave>
       </web:Credenciales>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/></con:call></con:operation></con:interface><con:mockService id="51f496dc-d339-4d04-91f4-91845a647ade" port="8180" path="/sw/MSP/BSGSW01_Consultar_Discapacidad" host="localhost" name="ConsultaDiscapacidadMock" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BuscarPersonaConDiscapacidad" id="dbf9dce6-313f-4212-95b4-ab15d6d091bc" interface="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" operation="BuscarPersonaConDiscapacidad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="51f496dc-d339-4d04-91f4-91845a647ade" port="8180" path="/sw/MSP/BSGSW01_Consultar_Discapacidad" host="localhost" name="ConsultaDiscapacidadMock" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BuscarPersonaConDiscapacidad" id="dbf9dce6-313f-4212-95b4-ab15d6d091bc" interface="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" operation="BuscarPersonaConDiscapacidad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
 def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
 def cedula = holder.getNodeValue("//Identificacion")
-if(cedula == '1111111116')
+if(cedula == '1706802202')
 	return "ConDiscapacidad"
 else
 	return "SinDiscapacidad"</con:dispatchPath><con:response name="SinDiscapacidad" id="f3613c89-c434-4e76-ae7c-829c54c43c96" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -167,22 +167,14 @@ else
 </soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:response name="ConDiscapacidad" id="a9719db1-f5c9-4691-8f3a-87021896cf34" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <BuscarPersonaConDiscapacidadResponse>
-         <CodigoConadis>03.2436</CodigoConadis>
-         <Nombres>LIZSBETH DANIELA</Nombres>
-         <Apellidos>ZAMORA POMAQUIZA</Apellidos>
-         <Genero>F</Genero>
-         <FechaNacimiento>1999-01-20</FechaNacimiento>
-         <DeficienciaPredomina>LENGUAJE</DeficienciaPredomina>
-         <GradoDiscapacidad>GRAVE</GradoDiscapacidad>
-         <PorcentajeDiscapacidad>56</PorcentajeDiscapacidad>
-         <NivelInstruccion>PRIMARIA</NivelInstruccion>
-         <Provincia>CAÑAR</Provincia>
-         <Canton>CAÑAR</Canton>
-         <Parroquia>DUCUR</Parroquia>
-         <Direccion>CHACALCAY</Direccion>
-         <DireccionReferencia>JUNTO A VIA DURAN-TAMBO</DireccionReferencia>
-         <TlfCelular>(099) 984 9031</TlfCelular>
-         <FechaConadis>2010-05-19 10:59:53-05</FechaConadis>
+         <CodigoConadis>17.50628</CodigoConadis>
+         <Nombres>SILVIA INES</Nombres>
+         <Apellidos>ALMEIDA GALINDO</Apellidos>
+         <FechaNacimiento>1960-12-06 00:00:00-05</FechaNacimiento>
+         <DeficienciaPredomina>FISICA</DeficienciaPredomina>
+         <GradoDiscapacidad>Moderado</GradoDiscapacidad>
+         <PorcentajeDiscapacidad>30</PorcentajeDiscapacidad>
+         <FechaConadis>2012-12-04 00:00:00-05</FechaConadis>
       </BuscarPersonaConDiscapacidadResponse>
    </soap:Body>
 </soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
