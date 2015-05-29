@@ -137,7 +137,7 @@
   </S:Header>
   <S:Body>
     <ns2:DatosAcceso xmlns:ns2="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
-      <Identificacion>1111111116</Identificacion>
+      <Identificacion>1706802202</Identificacion>
       <Usuario>WS-SNAP</Usuario>
       <Clave>StiDig02</Clave>
     </ns2:DatosAcceso>
@@ -157,8 +157,10 @@ def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
 def cedula = holder.getNodeValue("//Identificacion")
 if(cedula == '1706802202')
 	return "ConDiscapacidad"
+else if(cedula.size() == 10)
+	return "SinDiscapacidad"
 else
-	return "SinDiscapacidad"</con:dispatchPath><con:response name="SinDiscapacidad" id="f3613c89-c434-4e76-ae7c-829c54c43c96" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	return "ConFault"</con:dispatchPath><con:response name="SinDiscapacidad" id="f3613c89-c434-4e76-ae7c-829c54c43c96" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <BuscarPersonaConDiscapacidadResponse>
          <Mensaje>No se encontro discapacitado</Mensaje>
@@ -177,4 +179,20 @@ else
          <FechaConadis>2012-12-04 00:00:00-05</FechaConadis>
       </BuscarPersonaConDiscapacidadResponse>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:response name="ConFault" id="76cff450-f0aa-4d9a-ae25-f6315be5a531" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
+  <soapenv:Body>
+    <soapenv:Fault>
+      <faultcode>001</faultcode>
+      <faultstring xml:lang="?">Error Fault</faultstring>
+      <!--Optional:-->
+      <faultactor>?</faultactor>
+      <!--Optional:-->
+      <detail>
+        <web:BuscarPersonaConDiscapacidadError>
+          <message>Ocurrio un error al buscar persona con discapcidad</message>
+        </web:BuscarPersonaConDiscapacidadError>
+        <!--You may enter ANY elements at this point-->
+      </detail>
+    </soapenv:Fault>
+  </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidadResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
