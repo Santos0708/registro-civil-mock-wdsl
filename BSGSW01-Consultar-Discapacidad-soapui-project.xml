@@ -142,17 +142,28 @@
       <Clave>StiDig02</Clave>
     </ns2:DatosAcceso>
   </S:Body>
-</S:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidad"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c9cfc9cb-f3ae-4345-a226-bf0ca768dcd1" isOneWay="false" action="" name="ProbarConexion" bindingOperationName="ProbarConexion" type="Request-Response" outputName="ProbarConexionResponse" inputName="ProbarConexion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="83c158e0-0548-48be-b180-6b1b3898f46a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.salud.gob.ec/WebServiceSnapDiscapacidades">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <web:Credenciales>
-         <!--Optional:-->
-         <Usuario>?</Usuario>
-         <!--Optional:-->
-         <Clave>?</Clave>
-      </web:Credenciales>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="51f496dc-d339-4d04-91f4-91845a647ade" port="8180" path="/sw/MSP/BSGSW01_Consultar_Discapacidad" host="localhost" name="ConsultaDiscapacidadMock" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BuscarPersonaConDiscapacidad" id="dbf9dce6-313f-4212-95b4-ab15d6d091bc" interface="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" operation="BuscarPersonaConDiscapacidad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+</S:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/BuscarPersonaConDiscapacidad"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c9cfc9cb-f3ae-4345-a226-bf0ca768dcd1" isOneWay="false" action="" name="ProbarConexion" bindingOperationName="ProbarConexion" type="Request-Response" outputName="ProbarConexionResponse" inputName="ProbarConexion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="83c158e0-0548-48be-b180-6b1b3898f46a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.bsg.gob.ec/sw/MSP/BSGSW01_Consultar_Discapacidad</con:endpoint><con:request><![CDATA[<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Header>
+    <wss:Security xmlns:wss="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wss:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wss:Username>1001633807</wss:Username>
+        <wss:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">EQpRSuZgJpvUAYR3Qp4TR+aBG5U=</wss:Password>
+        <wss:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">jI/y4VLfEAn4TuTDmqpUEQ==</wss:Nonce>
+        <wsu:Created>2015-06-04T17:06:21Z</wsu:Created>
+      </wss:UsernameToken>
+      <wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsu:Created>2015-06-04T17:06:21Z</wsu:Created>
+        <wsu:Expires>2015-06-04T17:10:21Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wss:Security>
+  </S:Header>
+  <S:Body>
+    <web:Credenciales>
+      <Usuario>WS-SNAP</Usuario>
+      <Clave>StiDig02</Clave>
+    </web:Credenciales>
+  </S:Body>
+</S:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.salud.gob.ec/WebServiceSnapDiscapacidades/WebServiceSnapDiscapacidades/ProbarConexion"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="51f496dc-d339-4d04-91f4-91845a647ade" port="8180" path="/sw/MSP/BSGSW01_Consultar_Discapacidad" host="localhost" name="ConsultaDiscapacidadMock" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="BuscarPersonaConDiscapacidad" id="dbf9dce6-313f-4212-95b4-ab15d6d091bc" interface="WebServiceSnapDiscapacidadesDefinitionsSoapBinding" operation="BuscarPersonaConDiscapacidad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
 def holder = groovyUtils.getXmlHolder(mockRequest.requestContent)
 def cedula = holder.getNodeValue("//Identificacion")
 if(cedula == '1706802202')
