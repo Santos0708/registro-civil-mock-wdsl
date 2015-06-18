@@ -11,7 +11,7 @@
         <init-param>
             <description>project file path</description>
             <param-name>projectFile</param-name>
-            <param-value>WEB-INF/soapui/BSGSW01-Consultar-Discapacidad-soapui-project.xml</param-value>
+            <param-value>WEB-INF/soapui/BSGSW01-Consultar-Cedula-soapui-project.xml</param-value>
         </init-param>
         <init-param>
             <description>enable Web UI</description>
@@ -41,7 +41,7 @@
         <init-param>
             <description>set MockService endpoint used in generated WSDLs and schemas</description>
             <param-name>mockServiceEndpoint</param-name>
-            <param-value>https://consulta-discapacidad-mock.herokuapp.com</param-value>
+            <param-value>https://consulta-cedula-mock.herokuapp.com/</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
